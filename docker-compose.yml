@@ -1,0 +1,20 @@
+
+
+verson: '3'
+services:
+  web:
+    build: .
+    ports:
+      - '1941:1941'
+
+  db:
+    image: 'mongoDB'
+    environment:
+      - rootuser=root
+    volumes:
+      - db-data:/foo
+
+  volumes:
+    db-data:
+
+    # docker 'compose up' on command line
